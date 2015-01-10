@@ -1,6 +1,6 @@
 require('sinatra')
 require('sinatra/reloader')
-also_reload('./lib/word_counter')
+also_reload('./lib/word_counter.rb')
 require('./lib/word_counter')
 
 
@@ -12,8 +12,8 @@ end
 
 get('/result') do
 
-  @firstword = params.fetch("firstword").word_counter()
-  @sentence = params.fetch("sentence").word_counter
-erb(:results)
+@firstword = params.fetch("firstword").word_counter()
+@sentence = params.fetch("sentence").word_counter
+  erb(:result)
 
 end
